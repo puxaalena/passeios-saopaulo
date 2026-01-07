@@ -1,0 +1,242 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #111;
+}
+
+/* ===== LINHA VERMELHA LATERAL ===== */
+.decor-line {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 100vh;
+  background: #e50000;
+  z-index: 999;
+}
+
+/* ===== HEADER ===== */
+.topo-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 40px;
+  border-bottom: 4px solid #111;
+}
+
+.topo-menu h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+/* MENU */
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #e50000;
+}
+
+/* HAMBURGER */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-btn div {
+  width: 28px;
+  height: 3px;
+  background: #111;
+}
+
+/* ========== CONTAINER ========== */
+.passeio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+/* ========== ELEMENTOS GERAIS ========== */
+.box {
+  padding: 30px;
+  border: 4px solid #111;
+  background: white;
+  transition: 0.15s;
+}
+
+.box:hover {
+  background: #f7f7f7;
+}
+
+h2, h3 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h2::after, h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background: #e50000;
+}
+
+/* ========== HEADER DO PASSEIO ========== */
+.passeio-header {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.foto-passeio {
+  width: 350px;
+  height: auto;
+  border: 4px solid #111;
+}
+
+.intro .subtitulo {
+  font-size: 1.2rem;
+  margin-top: -10px;
+  font-weight: 700;
+}
+
+.tags span {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 8px;
+  background: #e50000;
+  color: white;
+  padding: 4px 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* ========== DETALHES ========== */
+.info-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-lista strong {
+  font-weight: 900;
+}
+
+/* ========== GALERIA ========== */
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.grid-galeria img {
+  width: 100%;
+  border: 3px solid #111;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ========== MAPA ========== */
+.mapa iframe {
+  border: 3px solid #111;
+  border-radius: 0;
+}
+
+/* ========== RESPONSIVO TABLET (900px) ========== */
+@media (max-width: 900px) {
+  .passeio-header {
+    flex-direction: column;
+  }
+
+  .foto-passeio {
+    width: 100%;
+  }
+
+  .topo-menu h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* ========== RESPONSIVO MOBILE (700px) ========== */
+@media (max-width: 700px) {
+
+  .decor-line {
+    display: none;
+  }
+
+  .topo-menu {
+    padding: 20px;
+    position: relative;
+    z-index: 999;
+  }
+
+  .topo-menu h1 {
+    font-size: 2.6rem;
+  }
+
+  .menu-btn {
+    display: flex;
+    z-index: 1001;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    border: 3px solid #111;
+    padding: 20px;
+    width: 180px;
+    z-index: 1000;
+  }
+
+.menu-btn {
+  z-index: 2001;
+}
+
+
+  nav.open {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .passeio-container {
+    padding: 30px 20px;
+  }
+}

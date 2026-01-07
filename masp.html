@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASP — Guia de Passeios</title>
+  <link rel="stylesheet" href="masp.css">
+</head>
+<body>
+
+  <div class="decor-line"></div>
+
+  <header class="topo-menu">
+    <h1>Guia de Passeios</h1>
+
+    <div class="menu-btn">
+      <div></div><div></div><div></div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#">Passeios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container passeio-container">
+
+    <!-- IMAGEM E INFO PRINCIPAL -->
+    <section class="passeio-header box">
+      <img src="imgs/maspcapa.jpg" alt="MASP" class="foto-passeio">
+
+      <div class="intro">
+        <h2>MASP</h2>
+        <p class="subtitulo">Museu de Arte de São Paulo</p>
+
+        <div class="tags">
+          <span>Museu</span>
+          <span>Arte</span>
+          <span>Avenida Paulista</span>
+          <span>Gratuito</span>
+        </div>
+
+        <p class="descricao-curta">
+          Um dos museus mais importantes da América Latina, famoso pelo vão livre e pelo acervo permanente com obras icônicas de diversas épocas.
+        </p>
+      </div>
+    </section>
+
+    <!-- DETALHES DO PASSEIO -->
+    <section class="detalhes box">
+      <h3>Informações Essenciais</h3>
+
+      <ul class="info-lista">
+        <li><strong>Local:</strong> Avenida Paulista, 1578 — São Paulo</li>
+        <li><strong>Horários:</strong> Terça a domingo, 10h–18h (Quartas até 20h)</li>
+        <li><strong>Preço:</strong> R$ 30 inteira / R$ 15 meia — Quartas grátis</li>
+        <li><strong>Duração média:</strong> 1h a 2h</li>
+        <li><strong>Acessibilidade:</strong> Elevadores e rampas disponíveis</li>
+      </ul>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="galeria box">
+      <h3>Galeria</h3>
+
+      <div class="grid-galeria">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/MASP_S%C3%A3o_Paulo.jpg">
+        <img src="imgs/masp2.jpg">
+        <img src="imgs/masp3.gif">
+      </div>
+    </section>
+
+    <!-- TEXTO DETALHADO -->
+    <section class="descricao box">
+      <h3>Sobre o Passeio</h3>
+      <p>
+        O MASP é um dos símbolos arquitetônicos de São Paulo, famoso pelo vão livre de 74 metros que se tornou cartão-postal.  
+        Seu acervo reúne obras de artistas como Van Gogh, Portinari, Anita Malfatti e Renoir.
+      </p>
+      <p>
+        Além das exposições permanentes, o museu recebe mostras temporárias importantes, eventos culturais e visitas mediadas.
+      </p>
+    </section>
+
+    <!-- MAPA -->
+    <section class="mapa box">
+      <h3>Localização</h3>
+      <iframe
+        width="100%" height="300" style="border:0"
+        loading="lazy" allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2359095311593!2d-46.657883!3d-23.562302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c5cc85dfb7%3A0x5234f31e1c3cd7d2!2sMASP%20-%20Museu%20de%20Arte%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1700000000000">
+      </iframe>
+    </section>
+
+  </main>
+<script>
+  const nav = document.querySelector("nav");
+  const menuBtn = document.querySelector(".menu-btn");
+
+  // abre e fecha o menu quando clica no botão
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // evita fechar instantaneamente
+    nav.classList.toggle("open");
+  });
+
+  // fecha ao clicar fora
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target)) {
+      nav.classList.remove("open");
+    }
+  });
+
+  // fecha ao clicar em um link
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => nav.classList.remove("open"));
+  });
+</script>
+
+</body>
+</html>
